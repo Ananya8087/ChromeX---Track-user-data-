@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Enhanced Activity Tracker Extension",
+  "version": "1.1",
+  "description": "An extension to track user activities on specific parts of web pages",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "time-left.png",
+      "48": "time-left.png",
+      "128": "time-left.png"
+    }
+  }
+}
